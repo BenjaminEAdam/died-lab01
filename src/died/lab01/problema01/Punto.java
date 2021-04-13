@@ -2,8 +2,8 @@ package died.lab01.problema01;
 
 public class Punto {
 	
-	float x;
-	float y;
+	private float x;
+	private float y;
 	
 	Punto(float x, float y){
 		this.x=x;
@@ -26,13 +26,20 @@ public class Punto {
 		this.y = y;
 	}
 	
-	public boolean equals(Punto otroPunto) {
-		if (this.x==otroPunto.x && this.y==otroPunto.y) {
-			return true;
+	public boolean equals(Object otroPunto) {
+		if (otroPunto instanceof Punto) {
+			Punto elPunto=(Punto) otroPunto;
+			if (this.x==elPunto.x && this.y==elPunto.y) {
+				return true;
+			}
+			else {
+				return false;
+			}
 		}
 		else {
 			return false;
 		}
+		
 	}
 
 }
